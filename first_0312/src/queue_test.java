@@ -1,8 +1,8 @@
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.Queue;
+import java.util.Scanner;
 
-public class test {
+public class queue_test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Queue<Integer> queue_t = new LinkedList<Integer>();
@@ -15,9 +15,4 @@ public class test {
         System.out.println(queue_t);
 
     }
-}
-
-class List_test{
-
-
 }

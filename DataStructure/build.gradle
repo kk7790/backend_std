@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//
+//project(':HashTest') {
+//    dependencies {
+//        compileOnly project(':multi-module-database')
+//    }
+//}
+//
+//project(':multi-module-batch') {
+//    dependencies {
+//        compileOnly project(':multi-module-database')
+//    }
+//}
+//
+//project(':multi-module-database') {
+//    bootJar { enabled = false }
+//    jar { enabled = true }
+//}

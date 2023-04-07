@@ -1,0 +1,7 @@
+rootProject.name = 'DataStructure'
+include 'ListStructure'
+include 'HashTest'
+include 'QueueTest'
+include 'StackTest'
+include 'DataTest'
+

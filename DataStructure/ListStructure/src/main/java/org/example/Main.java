@@ -3,12 +3,14 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         ListObject listObject = new ListObject();
-        listObject.size();
-        listObject.addObject(1);
-        listObject.addObject(2);
-        listObject.addObject(3);
+        for(int i = 0; i < 10; i++){
+            listObject.addObject(i+1);
+        }
+        listObject.allData();
 
-        listObject.delObject(1);
+        listObject.delObject(4);
+        listObject.delFirst();
+        listObject.delLast();
         listObject.AllDelObject();
     }
 }

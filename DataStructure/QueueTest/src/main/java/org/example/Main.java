@@ -2,14 +2,16 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        QueueObject queueObject = new QueueObject();
-        queueObject.addQueue(1);
-        queueObject.addQueue(2);
-        queueObject.addQueue(3);
-        queueObject.addQueue(4);
+        MakeObject makeObject = new MakeObject();
+        System.out.println("배열생성");
 
-        queueObject.delQueue();
+        makeObject.addQueue(1);
+        makeObject.addQueue(2);
+        makeObject.addQueue(3);
+        makeObject.addQueue(4);
 
-        queueObject.alldelQueue();
+        makeObject.delQueue();
+
+        makeObject.alldelQueue();
     }
 }

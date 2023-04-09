@@ -3,28 +3,30 @@ package org.example;
 import java.util.Stack;
 
 public class StackObject {
-    Stack<Integer> userMakeStack = new Stack<>();
-    Stack<Integer> addStack(int userInput){
-        userMakeStack.add(userInput);
-        System.out.println("추가 완료. 현재 스택 : "+ userMakeStack);
-        stackSize();
-        return userMakeStack;
+    int size = 1;
+    ObjectMake stackMake = new ObjectMake();
+//    Stack<Integer> userMakeStack = new Stack<>();
+    public void addStack(Object userInput){
+        stackMake.addLast(userInput);
+        System.out.print("추가 완료. 현재 스택 : ");
+        stackMake.allDataPrint();
+        System.out.println("사이즈 : "+stackMake.size());
     }
 
-    Stack<Integer> delStack(){
-        userMakeStack.pop();
-        System.out.println("삭제 완료, 현재 스택 : "+ userMakeStack);
-        stackSize();
-        return userMakeStack;
+    public void delStack(){
+        stackMake.delLast();
+        System.out.print("삭제 완료, 현재 스택 : ");
+        stackMake.allDataPrint();
+        System.out.println("스택사이즈 : "+ stackMake.size());
     }
 
-    Stack<Integer> alldelStack(){
-        userMakeStack.clear();
-        System.out.print("스택 값 전부 삭제 완료 : "+ userMakeStack);
-        stackSize();
-        return userMakeStack;
+    void alldelStack(){
+        stackMake.allDelete();
+        System.out.print("스택 값 전부 삭제 완료 : ");
+        stackMake.allDataPrint();
+        System.out.println("스택사이즈 : "+ stackMake.size());
     }
     void stackSize(){
-        System.out.println("현재 스택 크기 : "+ userMakeStack.size());
+        System.out.println("스택사이즈 : "+ stackMake.size());
     }
 }

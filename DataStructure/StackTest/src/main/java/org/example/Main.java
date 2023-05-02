@@ -14,6 +14,6 @@ public class Main {
 
         stackObject.delStack();
 
-        stackObject.alldelStack();
+        stackObject.allDelStack();
     }
 }

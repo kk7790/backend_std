@@ -1,27 +1,35 @@
 package org.example;
 
-public class MakeObject {
-    ObjectMake ListTest = new ObjectMake();
+public class MakeObject extends ObjectMake{
+//    ObjectMake ListTest = new ObjectMake();
 //    Queue<Integer> queue = new LinkedList<>();
 
-    void addQueue(Object userInput){
-        ListTest.addLast(userInput);
-//        System.out.println(newqueueTest.length);
-//        queueTest.allDataPrint();
+//    ObjectMake objectmake = new ObjectMake();
+
+    void addQueue(int userInput){
+        addLast(userInput);
     }
 
      void delQueue(){
-        ListTest.delFirst();
-        int sizeCheck = ListTest.size;
-        ListTest.allDataPrint();
-        ListTest.size();
+         delFirst();
+         allDataPrint();
+         size();
     }
 
-    void alldelQueue(){
-        ListTest.allDelete();
-        System.out.println("값 전체 삭제 완료 : ");
-        ListTest.allDataPrint();
-        ListTest.size();
+    void allDelQueue(){
+        allDelete();
+        allDataPrint();
+        size();
+    }
+
+    public int sizeCheck(){
+        int returnSize = size();
+        return returnSize;
+    }
+
+    public boolean allData(){
+        allDataPrint();
+        return true;
     }
 
 

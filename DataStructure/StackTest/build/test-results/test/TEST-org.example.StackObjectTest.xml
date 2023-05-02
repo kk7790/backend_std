@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.StackObjectTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-02T14:39:54" hostname="gwonsojin-ui-MacBookPro.local" time="0.1">
+  <properties/>
+  <testcase name="stackTest()" classname="org.example.StackObjectTest" time="0.1"/>
+  <system-out><![CDATA[현재 배열 값 : 1
+현재 배열 값 : 12
+현재 배열 값 : 123
+현재 배열 값 : 1234
+현재 배열 값 : 12345
+현재 배열 값 : 12345
+현재 배열 값 : 1234
+현재 배열 값 : 1234
+현재 배열 값 : 
+현재 배열 값 : 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -7,10 +7,11 @@ public class Main {
             listObject.addObject(i+1);
         }
         listObject.allData();
+        listObject.addObjectFirst(99);
 
-        listObject.delObject(4);
-        listObject.delFirst();
-        listObject.delLast();
+        listObject.delObject();
+        listObject.delObjectFirst();
+        listObject.delObjectChoose(3);
         listObject.AllDelObject();
     }
 }

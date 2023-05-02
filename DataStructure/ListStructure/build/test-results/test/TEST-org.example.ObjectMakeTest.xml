@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.ObjectMakeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-01T14:43:25" hostname="gwonsojin-ui-MacBookPro.local" time="0.108">
+  <properties/>
+  <testcase name="mainTest22()" classname="org.example.ObjectMakeTest" time="0.108"/>
+  <system-out><![CDATA[현재 배열 값 : 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,46 +1,45 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-public class ListObject {
-    ObjectMake listMake = new ObjectMake();
+public class ListObject extends ObjectMake{
+    //상속받았으면 부모의 기능 그대로 함수 걍 쓰면됨 ㅇㅇ 근데? 자식 함수에서 쓰는게 아니라, 자식함수를 호출할때 부모 기능까지 사용가능한거임ㄷㄷ
+    //여기서 부모꺼 쓰면 에러남..
+
+//    ObjectMake listMake = new ObjectMake();
 //    List<Integer> listA = new ArrayList<Integer>();
     public void addObject(int userInput){
-        listMake.addLast(userInput);
+        addLast(userInput);
     }
 
-    public void delObject(int userDelete){
-        listMake.delObject(userDelete);
-        System.out.println("값"+userDelete+"이 삭제되었습니다.");
-        System.out.println("---------------------------------");
-        listMake.allDataPrint();
-        listMake.size();
-
-    }
-    public void delFirst(){
-        listMake.delFirst();
-        System.out.println("첫번째 값이 삭제되었습니다.");
-        listMake.allDataPrint();
-        listMake.size();
-
+    public void addObjectFirst(int userInput){
+        addFirst(userInput);
     }
 
-    public void delLast(){
-        listMake.delLast();
-        System.out.println("마지막 값이 삭제되었습니다.");
-        listMake.allDataPrint();
-        listMake.size();
-
+    public boolean delObject(){
+        delLast();
+        return true;
     }
 
-    public void AllDelObject(){
-        listMake.allDelete();
-        System.out.println("전체 값이 삭제되었습니다.");
-        listMake.allDataPrint();
-        listMake.size();
+    public boolean delObjectChoose(int userDelete){
+        delObject(userDelete);
+        return true;
+    }
+    public boolean delObjectFirst(){
+        delFirst();
+        allDataPrint();
+        size();
+        return true;
     }
 
-    void allData(){
-        listMake.allDataPrint();
+    public boolean AllDelObject(){
+        allDelete();
+        allDataPrint();
+        size();
+        return true;
     }
+
+    public boolean allData(){
+        allDataPrint();
+        return true;
+    }
+
 }

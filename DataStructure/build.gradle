@@ -11,13 +11,28 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
 }
 
-test {
-    useJUnitPlatform()
-}
+//subprojects {
+//    apply plugin: 'java'
+//    dependencies {
+//        testCompile group: 'junit', name: 'junit', version: '4.12'
+//    }
+//}
+//
+//project(':QueueTest') {
+//    dependencies {
+//        implementation project(':ListStructure')
+//    }
+//}
+//
+//project(':StackTest') {
+//    dependencies {
+//        compile project(':ListStructure')
+//    }
+//}
 
 //
 //project(':HashTest') {

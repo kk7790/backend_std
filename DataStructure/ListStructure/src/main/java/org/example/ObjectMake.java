@@ -3,117 +3,109 @@ package org.example;
 import java.util.Arrays;
 
 public class ObjectMake {
-    public int size = 1;
+    private int size = 0;
+    private int realSize = 100;
+    private Object[] elementData = new Object[100];
 
-    public Object[] elementData = new Object[size];
+    //메모리 할당
+//    private boolean memoryAlloc(){
+//        if(size == 100) {
+//            return false;
+//        }
+//        return true;
+//
+//    }
 
     //add 구현
-    public void addLast(Object element) {
+    public boolean addLast(int element) {
+//        memoryAlloc();
+        elementData[size]=element;
         size++;
-        if(elementData[0] != null){
-            elementData = Arrays.copyOf(elementData, size-1);
-
-            elementData[size-2] = element;
-        }
-        else{
-            elementData[0]=element;
-        }
+        return true;
     }
-
-    public boolean addFirst(Object element) {
-        if(size == 0){
-            size ++;
-            elementData[size] = element;
+//Stack 과 queue에선 안씀..
+    public boolean addFirst(int element) {
+//        memoryAlloc();
+        for(int i=size; i>=0; i--){
+            elementData[i+1] = elementData[i];
+            elementData[i] = null;
         }
-        else {
-            elementData[size] = element;
-            size++;
-        }
+        elementData[0] = element;
+        size++;
+        allDataPrint();
         return true;
     }
 
-    public void delLast(){
+    public boolean delLast(){
+        size();
         if(size == 0){
-            System.out.println("현재 배열에 값이 없습니다!");
+            return false;
         }
         else{
+            elementData[size] = null;
             size --;
-            elementData = Arrays.copyOf(elementData, size);
+            return true;
         }
-        System.out.println("마지막 값 삭제 후 사이즈 : " + size());
     }
-    public void delFirst(){
+    public boolean delFirst(){
         if(size == 0){
-            System.out.println("현재 배열에 값이 없습니다!");
+            return false;
         }
         else{
+            for(int i = 0; i<size ; i++){
+                elementData[i]=elementData[i+1];
+            }
+            elementData[size] = null;
             size --;
-            elementData = Arrays.copyOfRange(elementData,1,size+1);
-
+            return true;
         }
-//        int sizeCheck = size();
-        System.out.println("처음 값 삭제 후 사이즈 : " + size());
     }
 
-    public void delObject(Object userDelete){
-        System.out.println("---------------특정 값 삭제------------------");
+    public boolean delObject(int userDelete){
         int remember = 0;
-        for(int i = 0; i<size-1 ; i++){
-            if(elementData[i] == userDelete){
-                remember = i;
-                System.out.println("찾은 위치 : "+ remember);
-            }
-        }
-        int resultSize = elementData.length -1;
         if(size == 0){
-            System.out.println("현재 배열에 값이 없습니다!");
+            return false;
         }
         else{
-            Object[] tmpData = new Object[remember+1];
-            Object[] tmpData2 = new Object[resultSize-remember];
-            tmpData = Arrays.copyOf(elementData,remember);
-
-            tmpData2 = Arrays.copyOfRange(elementData,remember+1,resultSize+1);
-
-            elementData = Arrays.copyOf(tmpData,tmpData.length);
-            int addCount = resultSize - (remember+1);
-
-            size = addCount-1;
-            for(int i=0;i <= addCount; i++){
-                addLast(tmpData2[i]);
+            for(int i = 0; i<size ; i++){
+                if((int) elementData[i] == userDelete){
+                    remember = i;
+                }
             }
+            for(int j=remember; j<size;j++){
+                elementData[j] = elementData[j+1];
+            }
+            elementData[size]= null;
+            size --;
             allDataPrint();
-//            elementData = Arrays.copyOfRange(tmpData2,remember+1,resultSize);
-
+            return true;
         }
-        size --;
-        System.out.println("현재 배열 사이즈 "+ size());
     }
 
-
-    public void allDelete(){
+    public boolean allDelete(){
         if(size > 0){
-            for(int i= elementData.length; i>0;i--){
-                elementData = Arrays.copyOf(elementData,size-1);
-                size --;
+            for(int i=0; i>size;i++){
+                elementData[i] = null;
             }
+            size=0;
+            return true;
         }
         else{
-            System.out.println("현재 배열의 값이 없습니다");
+            return false;
         }
-        size = 1;
     }
 
     public int size(){
         return size;
     }
 
-    public void allDataPrint(){
+    public boolean allDataPrint(){
         System.out.print("현재 배열 값 : ");
-        for(int n = 0; n <elementData.length; n++){
+        for(int n = 0; n <size; n++){
             System.out.print(elementData[n]);
         }
         System.out.println("");
+        return true;
     }
     
 }
